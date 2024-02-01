@@ -6,14 +6,27 @@ import { Route, RouterProvider, createRoutesFromElements } from "react-router";
 import { createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+
+import PrivateRoute from './components/PrivateRoute.jsx';
+
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
+import Profile from './pages/User/Profile.jsx';
+import AdminRoute from "./pages/Admin/AdminRoute.jsx"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="" element={<PrivateRoute />}>
+        <Route path="/profile" element={<Profile />} />
+      </Route>
+
+      <Route path="/admin" element={<AdminRoute />}>
+        
+      </Route>
+
     </Route>
   )
 );

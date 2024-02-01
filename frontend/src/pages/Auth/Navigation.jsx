@@ -86,7 +86,12 @@ const Navigation = () => {
           className="flex items-center text-white focus:outline-none"
         >
           {userInfo ? (
-            <span className="text-white">{userInfo.username}</span>
+            <div className="rounded-full h-6 w-6 bg-white  flex items-center justify-center  text-black">
+          
+              <span className="text-black font-bold">{userInfo.username.charAt(0)}</span>
+              
+            </div>
+            
           ) : (
             <></>
           )}

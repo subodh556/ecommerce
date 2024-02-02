@@ -9,7 +9,7 @@ export const productApiSlice = apiSlice.injectEndpoints({
         params: { keyword },
       }),
       keepUnusedDataFor: 5,
-      providesTags: ["Product"],
+      providesTags: ["Products"],
     }),
 
     getProductById: builder.query({

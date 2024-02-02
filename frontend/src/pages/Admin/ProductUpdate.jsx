@@ -10,7 +10,7 @@ import {
 import { useFetchCategoriesQuery } from "../../redux/api/categoryApiSlice";
 import { toast } from "react-toastify";
 
-const AdminProductUpdate = () => {
+const ProductUpdate = () => {
   const params = useParams();
 
   const { data: productData } = useGetProductByIdQuery(params._id);
@@ -59,16 +59,10 @@ const AdminProductUpdate = () => {
     formData.append("image", e.target.files[0]);
     try {
       const res = await uploadProductImage(formData).unwrap();
-      toast.success("Item added successfully", {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 2000,
-      });
+      toast.success("Item added successfully");
       setImage(res.image);
     } catch (err) {
-      toast.success("Item added successfully", {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 2000,
-      });
+      toast.success("Item added successfully");
     }
   };
 
@@ -86,26 +80,17 @@ const AdminProductUpdate = () => {
       formData.append("countInStock", stock);
 
       // Update product using the RTK Query mutation
-      const data = await updateProduct({ productId: params._id, formData });
+      const data = await updateProduct({ productId:params._id, formData });
 
       if (data?.error) {
-        toast.error(data.error, {
-          position: toast.POSITION.TOP_RIGHT,
-          autoClose: 2000,
-        });
+        toast.error(data.error);
       } else {
-        toast.success(`Product successfully updated`, {
-          position: toast.POSITION.TOP_RIGHT,
-          autoClose: 2000,
-        });
+        toast.success(`Product successfully updated`);
         navigate("/admin/allproductslist");
       }
     } catch (err) {
       console.log(err);
-      toast.error("Product update failed. Try again.", {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 2000,
-      });
+      toast.error("Product update failed. Try again.");
     }
   };
 
@@ -117,17 +102,11 @@ const AdminProductUpdate = () => {
       if (!answer) return;
 
       const { data } = await deleteProduct(params._id);
-      toast.success(`"${data.name}" is deleted`, {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 2000,
-      });
+      toast.success(`"${data.name}" is deleted`);
       navigate("/admin/allproductslist");
     } catch (err) {
       console.log(err);
-      toast.error("Delete failed. Try again.", {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 2000,
-      });
+      toast.error("Delete failed. Try again.");
     }
   };
 
@@ -264,4 +243,4 @@ const AdminProductUpdate = () => {
   );
 };
 
-export default AdminProductUpdate;
+export default ProductUpdate;

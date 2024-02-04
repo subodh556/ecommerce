@@ -16,10 +16,10 @@ const OrderList = () => {
           {error?.data?.message || error.error}
         </Message>
       ) : (
-        <table className="mx-auto">
+        <table className="w-[70rem] ml-[5rem] mt-4">
           <AdminMenu />
 
-          <thead className="w-full border">
+          <thead className="w-full bg-[#1c1c1e]">
             <tr className="mb-[5rem]">
               <th className="text-left pl-1">ITEMS</th>
               <th className="text-left pl-1">ID</th>

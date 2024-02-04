@@ -28,27 +28,27 @@ const ProductTabs = ({
   };
 
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex flex-col  md:flex-row">
       <section className="mr-[5rem]">
         <div
-          className={`flex-1 p-4 cursor-pointer text-lg ${
-            activeTab === 1 ? "font-bold" : ""
+          className={` p-3 cursor-pointer text-lg ${
+            activeTab === 1 ? "font-bold bg-black" : ""
           }`}
           onClick={() => handleTabClick(1)}
         >
           Write Your Review
         </div>
         <div
-          className={`flex-1 p-4 cursor-pointer text-lg ${
-            activeTab === 2 ? "font-bold" : ""
+          className={`flex-1 p-3 cursor-pointer text-lg ${
+            activeTab === 2 ? "font-bold bg-black" : ""
           }`}
           onClick={() => handleTabClick(2)}
         >
           All Reviews
         </div>
         <div
-          className={`flex-1 p-4 cursor-pointer text-lg ${
-            activeTab === 3 ? "font-bold" : ""
+          className={`flex-1  p-3 cursor-pointer text-lg ${
+            activeTab === 3 ? "font-bold bg-black" : ""
           }`}
           onClick={() => handleTabClick(3)}
         >
@@ -57,7 +57,8 @@ const ProductTabs = ({
       </section>
 
       {/* Second Part */}
-      <section>
+      <div className="">
+      <section className="mr-[5rem]">
         {activeTab === 1 && (
           <div className="mt-4">
             {userInfo ? (
@@ -114,12 +115,12 @@ const ProductTabs = ({
         )}
       </section>
 
-      <section>
+      <section className=" mt-4 my-2 mr-[5rem]">
         {activeTab === 2 && (
           <>
             <div>{product.reviews.length === 0 && <p>No Reviews</p>}</div>
 
-            <div>
+            <div className="my-2">
               {product.reviews.map((review) => (
                 <div
                   key={review._id}
@@ -141,21 +142,24 @@ const ProductTabs = ({
         )}
       </section>
 
-      <section>
+      <section className="mt-4 my-2  ">
         {activeTab === 3 && (
-          <section className="ml-[4rem] flex flex-wrap">
+          <section className="ml-[4rem]  flex flex-wrap">
             {!data ? (
               <Loader />
             ) : (
+              
               data.map((product) => (
                 <div key={product._id}>
                   <SmallProduct product={product} />
                 </div>
               ))
+              
             )}
           </section>
         )}
       </section>
+    </div>
     </div>
   );
 };

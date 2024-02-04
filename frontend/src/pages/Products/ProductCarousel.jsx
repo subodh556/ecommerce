@@ -1,4 +1,4 @@
-import { useGetTopProductsQuery } from "../../redux/api/productApiSlice";
+import { useAllProductsQuery } from "../../redux/api/productApiSlice";
 import Message from "../../components/Message";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 
 const ProductCarousel = () => {
-  const { data: products, isLoading, error } = useGetTopProductsQuery();
+  const { data: products, isLoading, error } = useAllProductsQuery();
 
   const settings = {
     dots: false,
@@ -27,7 +27,7 @@ const ProductCarousel = () => {
   };
 
   return (
-    <div className="mb-4 lg:block xl:block md:block">
+    <div className="mb-4 mt-3 lg:block xl:block md:block">
       {isLoading ? null : error ? (
         <Message variant="danger">
           {error?.data?.message || error.error}
@@ -35,7 +35,7 @@ const ProductCarousel = () => {
       ) : (
         <Slider
           {...settings}
-          className="xl:w-[50rem]  lg:w-[50rem] md:w-[56rem] sm:w-[40rem] sm:block"
+          className="xl:w-[40rem]  lg:w-[50rem] md:w-[56rem] sm:w-[40rem] sm:block"
         >
           {products.map(
             ({
@@ -55,10 +55,10 @@ const ProductCarousel = () => {
                 <img
                   src={image}
                   alt={name}
-                  className="w-200 rounded-lg h-[30rem]"
+                  className="w-full rounded-lg h-[25rem]"
                 />
 
-                <div className="w-[20rem] flex justify-between">
+                <div className="w-[20rem] flex mt-2 justify-between">
                   <div className="one">
                     <h2>{name}</h2>
                     <p> $ {price}</p> <br /> <br />

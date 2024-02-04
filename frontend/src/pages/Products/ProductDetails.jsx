@@ -65,10 +65,10 @@ const ProductDetails = () => {
 
   return (
     <>
-      <div>
+      <div className="bg-[#373536] ml-20 w-[6rem] h-[2rem]">
         <Link
           to="/"
-          className="text-white font-semibold hover:underline ml-[10rem]"
+          className="text-white flex justify-center decoration-none  font-semibold hover:underline "
         >
           Go Back
         </Link>
@@ -83,18 +83,18 @@ const ProductDetails = () => {
       ) : (
         <>
           <div className="flex flex-wrap relative items-between mt-[2rem] ml-[10rem]">
-            <div>
+            <div >
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full xl:w-[50rem] lg:w-[45rem] md:w-[30rem] sm:w-[20rem] mr-[2rem]"
+                className="w-full rounded-lg xl:w-[50rem] lg:w-[45rem] md:w-[30rem] sm:w-[20rem] mr-[2rem]"
               />
 
               <HeartIcon product={product} />
             </div>
 
             <div className="flex flex-col justify-between">
-              <h2 className="text-2xl font-semibold">{product.name}</h2>
+              <h2 className="text-2xl mt-4 font-semibold">{product.name}</h2>
               <p className="my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]">
                 {product.description}
               </p>
@@ -143,7 +143,7 @@ const ProductDetails = () => {
                     <select
                       value={qty}
                       onChange={(e) => setQty(e.target.value)}
-                      className="p-2 w-[6rem] rounded-lg text-black"
+                      className="p-2 w-[6rem] rounded-lg bg-[#1c1c1e] text-white"
                     >
                       {[...Array(product.countInStock).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
@@ -155,7 +155,7 @@ const ProductDetails = () => {
                 )}
               </div>
 
-              <div className="btn-container">
+              <div className="btn-container mt-1">
                 <button
                   onClick={addToCartHandler}
                   disabled={product.countInStock === 0}
@@ -165,8 +165,7 @@ const ProductDetails = () => {
                 </button>
               </div>
             </div>
-
-            <div className="mt-[5rem] container flex flex-wrap items-start justify-between ml-[10rem]">
+            <div className="mt-[5rem]  ml-0 ">
               <ProductTabs
                 loadingProductReview={loadingProductReview}
                 userInfo={userInfo}
@@ -178,7 +177,9 @@ const ProductDetails = () => {
                 product={product}
               />
             </div>
+            
           </div>
+          
         </>
       )}
     </>

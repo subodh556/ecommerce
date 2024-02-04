@@ -52,7 +52,7 @@ const Navigation = () => {
               className="flex items-center transition-transform transform hover:translate-x-2"
             >
               <AiOutlineHome className="mr-0 mt-[3rem]" size={26} />
-              <span className="hidden nav-item-name mt-[3rem]">HOME</span>{" "}
+              <span className="hidden nav-item-name ml-1 mt-[3rem]">HOME</span>{" "}
             </Link>
     
             <Link
@@ -60,7 +60,7 @@ const Navigation = () => {
               className="flex items-center transition-transform transform hover:translate-x-2"
             >
               <AiOutlineShopping className="mr-0 mt-[3rem]" size={26} />
-              <span className="hidden nav-item-name mt-[3rem]">SHOP</span>{" "}
+              <span className="hidden nav-item-name ml-1 mt-[3rem]">SHOP</span>{" "}
             </Link>
     
             <Link to="/cart" className="flex relative">
@@ -127,7 +127,7 @@ const Navigation = () => {
 
         {dropdownOpen && userInfo && (
           <ul
-            className={`absolute right-0 left-10  mt-0 mb-0  mr-8 space-y-1 text-white ${
+            className={`absolute right-0 left-10  mt-0 mb-0 bg-[#1f1f1f]  mr-8 space-y-1 text-white ${
               !userInfo.isAdmin ? "-top-20" : "-top-60"
             } `}
           >

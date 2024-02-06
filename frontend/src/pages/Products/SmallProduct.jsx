@@ -3,9 +3,9 @@ import HeartIcon from "./HeartIcon";
 
 const SmallProduct = ({ product }) => {
   return (
-    <Link to={`/product/${product._id}`}>
+   
     <div className="w-[18rem] ml-[2rem] mt-2">
-      
+       
       <div className="relative ">
         <img
           src={product.image}
@@ -14,7 +14,7 @@ const SmallProduct = ({ product }) => {
         />
         <HeartIcon product={product} />
       </div>
-
+      <Link to={`/product/${product._id}`}>
       <div className="p-4 ">
         
           <h2 className="flex justify-between items-center">
@@ -25,9 +25,9 @@ const SmallProduct = ({ product }) => {
           </h2>
         
       </div>
-      
+      </Link>
     </div>
-    </Link>
+    
   );
 };
 

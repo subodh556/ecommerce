@@ -69,7 +69,7 @@ const ProductDetails = () => {
         <Link
           to="/"
           className="text-white flex justify-center decoration-none  font-semibold hover:font-bold "
-        >
+        > 
           Go Back
         </Link>
       </div>

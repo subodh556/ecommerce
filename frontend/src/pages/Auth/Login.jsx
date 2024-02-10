@@ -96,7 +96,7 @@ const Login = () => {
               New Customer?{" "}
               <Link
                 to={redirect ? `/register?redirect=${redirect}` : "/register"}
-                className="text-pink-500 hover:underline"
+                className="text-pink-500 hover:font-bold"
               >
                 Register
               </Link>

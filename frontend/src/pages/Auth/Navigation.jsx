@@ -12,18 +12,13 @@ import FavoritesCount from "../Products/FavoritesCount";
 const Navigation = () => {
     const { userInfo } = useSelector((state) => state.auth);
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [showSidebar, setShowSidebar] = useState(false);
+  
     const { cartItems } = useSelector((state) => state.cart);
     
     const toggleDropdown = () => {
       setDropdownOpen(!dropdownOpen);
     };
-    const toggleSidebar = () => {
-        setShowSidebar(!showSidebar);
-    };
-    const closeSidebar=()=>{
-        setShowSidebar(false);
-    }
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [logoutApiCall] = useLogoutMutation();
@@ -41,9 +36,7 @@ const Navigation = () => {
     return (
         <div
           style={{ zIndex: 9999 }}
-          className={`${
-            showSidebar ? "hidden" : "flex"
-          } xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-4 text-white bg-[#000] w-[4%] hover:w-[15%]  h-[100vh]  fixed `}
+          className={` xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-4 text-white bg-[#000] w-[4%] hover:w-[15%]  h-[100vh]  fixed `}
           id="navigation-container"
         >
           <div className="flex flex-col justify-center space-y-4">
@@ -80,7 +73,7 @@ const Navigation = () => {
               </div>
             </Link>
     
-            <Link to="/favorite" className="flex relative">
+            <Link to="/favorite" className="flex relative ml-1">
               <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
                 <FaHeart className="mt-[3rem] mr-2" size={20} />
                 <span className="hidden nav-item-name mt-[3rem]">
@@ -108,7 +101,7 @@ const Navigation = () => {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className={`h-4 w-4 ml-0 ${
-                  dropdownOpen ? "transform -rotate-180" : "transform rotate-180"
+                  dropdownOpen ? "transform  -rotate-180 " : "transform  rotate-180 "
                 }`}
                 fill="none"
                 viewBox="0 0 24 24"

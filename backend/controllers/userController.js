@@ -117,6 +117,9 @@ const updateCurrentUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
+
+
+
 const deleteUserById = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
 

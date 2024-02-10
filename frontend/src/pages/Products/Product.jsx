@@ -4,7 +4,7 @@ import HeartIcon from "./HeartIcon";
 const Product = ({ product }) => {
   return (
     <div className="w-[30rem] ml-[1rem] p-2 relative">
-      <Link to={`/product/${product._id}`}>
+      <Link to={`/favorite`}>
       <div className="relative ">
         <img
           src={product.image}

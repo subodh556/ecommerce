@@ -91,104 +91,104 @@ const Navigation = () => {
             </Link>
           </div>
           <div className="relative">
-        <button
-          onClick={toggleDropdown}
-          className="flex items-center text-white focus:outline-none"
-        >
-          {userInfo ? (
-            <div className="rounded-full h-6 w-6 bg-white  flex items-center justify-center  text-black">
-          
-              <span className="text-black font-bold">{userInfo.username.charAt(0)}</span>
-              
-            </div>
-            
-          ) : (
-            <></>
-          )}
-          {userInfo && (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className={`h-4 w-4 ml-1 ${
-                dropdownOpen ? "transform rotate-180" : ""
-              }`}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="white"
+            <button
+              onClick={toggleDropdown}
+              className="flex items-center text-white focus:outline-none"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d={dropdownOpen ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"}
-              />
-            </svg>
-          )}
-        </button>
-
-        {dropdownOpen && userInfo && (
-          <ul
-            className={`absolute right-0 left-10  mt-0 mb-0 bg-[#1f1f1f]  mr-8 space-y-1 text-white ${
-              !userInfo.isAdmin ? "-top-20" : "-top-60"
-            } `}
-          >
-            {userInfo.isAdmin && (
-              <>
-                <li>
-                  <Link
-                    to="/admin/dashboard"
-                    className="block px-4 py-1 hover:bg-gray-950"
-                  >
-                    Dashboard
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/admin/allproductslist"
-                    className="block px-4 py-1 hover:bg-gray-950"
-                  >
-                    Products
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/admin/categorylist"
-                    className="block px-4 py-1 hover:bg-gray-950"
-                  >
-                    Category
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/admin/orderlist"
-                    className="block px-4 py-1 hover:bg-gray-950"
-                  >
-                    Orders
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/admin/userlist"
-                    className="block px-4 py-1 hover:bg-gray-950"
-                  >
-                    Users
-                  </Link>
-                </li>
-              </>
+            {userInfo ? (
+              <div className="rounded-full h-6 w-6 bg-white  flex items-center justify-center  text-black">
+            
+                <span className="text-black font-bold">{userInfo.username.charAt(0)}</span>
+                
+              </div>
+              
+            ) : (
+              <></>
             )}
+            {userInfo && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className={`h-4 w-4 ml-1 ${
+                  dropdownOpen ? "transform rotate-180" : ""
+                }`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="white"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d={dropdownOpen ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"}
+                />
+              </svg>
+            )}
+          </button>
 
-            <li>
+          {dropdownOpen && userInfo && (
+            <ul
+              className={`absolute right-0 left-10  mt-0 mb-0 bg-[#1f1f1f]  mr-8 space-y-1 text-white ${
+                !userInfo.isAdmin ? "-top-20" : "-top-60"
+              } `}
+            >
+              {userInfo.isAdmin && (
+                <>
+                  <li>
+                    <Link
+                      to="/admin/dashboard"
+                      className="block px-4 py-1 hover:bg-gray-950"
+                    >
+                      Dashboard
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/admin/allproductslist"
+                      className="block px-4 py-1 hover:bg-gray-950"
+                    >
+                      Products
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/admin/categorylist"
+                      className="block px-4 py-1 hover:bg-gray-950"
+                    >
+                      Category
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/admin/orderlist"
+                      className="block px-4 py-1 hover:bg-gray-950"
+                    >
+                      Orders
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/admin/userlist"
+                      className="block px-4 py-1 hover:bg-gray-950"
+                    >
+                      Users
+                    </Link>
+                  </li>
+                </>
+          )}
+
+          <li>
               <Link to="/profile" className="block px-4 py-1 hover:bg-gray-950">
                 Profile
               </Link>
-            </li>
-            <li>
+          </li>
+          <li>
               <button
                 onClick={logoutHandler}
                 className="block w-full px-4 py-1 text-left hover:bg-gray-950"
               >
                 Logout
               </button>
-            </li>
+          </li>
           </ul>
         )}
         {!userInfo && (
@@ -213,7 +213,7 @@ const Navigation = () => {
             </li>
           </ul>
         )}
-      </div>
+          </div>
           
         </div>
       );

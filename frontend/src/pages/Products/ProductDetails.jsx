@@ -68,7 +68,7 @@ const ProductDetails = () => {
       <div className="bg-[#373536] ml-20 w-[6rem] h-[2rem]">
         <Link
           to="/"
-          className="text-white flex justify-center decoration-none  font-semibold hover:underline "
+          className="text-white flex justify-center decoration-none  font-semibold hover:font-bold "
         >
           Go Back
         </Link>

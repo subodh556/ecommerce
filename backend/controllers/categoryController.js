@@ -23,6 +23,8 @@ const createCategory = asyncHandler(async (req, res) => {
   }
 });
 
+
+
 const updateCategory = asyncHandler(async (req, res) => {
   try {
     const { name } = req.body;

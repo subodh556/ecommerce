@@ -7,11 +7,11 @@ const Favorites = () => {
 
   return (
     <div className="ml-[4rem]">
-      <h1 className="text-lg font-bold ml-[30rem] mb-10 mt-[3rem]">
-        FAVORITE PRODUCTS
+      <h1 className="text-2xl font-bold ml-[6rem] mb-8 mt-[3rem]">
+        Favorite Products
       </h1>
 
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap ml-20 mt-0">
         {favorites.map((product) => (
           <Product key={product._id} product={product} />
         ))}

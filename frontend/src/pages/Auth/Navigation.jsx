@@ -62,7 +62,7 @@ const Navigation = () => {
                 <span className="hidden nav-item-name mt-[3rem]">Cart</span>{" "}
               </div>
                   
-              <div className="absolute top-9">
+              <div className="absolute left-3 top-9">
                 {cartItems.length > 0 && (
                   <span>
                     <span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">

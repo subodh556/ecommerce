@@ -43,6 +43,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
         method: "DELETE",
       }),
     }),
+  
     getUserDetails: builder.query({
       query: (id) => ({
         url: `${USERS_URL}/${id}`,

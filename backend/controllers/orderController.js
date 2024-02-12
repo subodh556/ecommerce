@@ -80,7 +80,8 @@ const createOrder = async (req, res) => {
 
 const getAllOrders = async (req, res) => {
   try {
-    const orders = await Order.find({}).populate("user", "id username");
+    const orders = await Order.find({}).populate("user", "id username").sort({paidAt:-1});
+    
     res.json(orders);
   } catch (error) {
     res.status(500).json({ error: error.message });

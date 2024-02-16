@@ -21,7 +21,7 @@ const app = express();
 const cors = require('cors');
 
 app.use(cors({
-  origin:[""],
+  origin:["https://shooperssite.vercel.app"],
   methods:["POST","GET","PUT","DELETE"],
   credentials:true
 }))

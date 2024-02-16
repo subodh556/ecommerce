@@ -3,6 +3,6 @@
         {"src":"*.js","use":"@vercel/node"}
     ],
     "routes": [
-        {"src": "/(.*)", "dest": "https://ecommerce-chrj.vercel.app/"}
+        {"src": "/(.*)", "dest": "https://ecommerce-theta-hazel.vercel.app/"}
     ]
 }

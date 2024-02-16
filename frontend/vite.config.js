@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api/": "https://ecommerce-3sp1thdhv-nextjsauths-projects.vercel.app/",
-      "/uploads/": "https://ecommerce-3sp1thdhv-nextjsauths-projects.vercel.app/",
+      "/api/": "http://localhost:5000",
+      "/uploads/": "http://localhost:5000",
     },
   },
 })

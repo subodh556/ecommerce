@@ -11,6 +11,7 @@ import categoryRoutes from "./routes/categoryRoutes.js"
 import productRoutes from "./routes/productRoutes.js"
 import uploadRoutes from "./routes/uploadRoutes.js"
 import orderRoutes from "./routes/orderRoutes.js"
+import cors from "cors"
 
 dotenv.config();
 const port = process.env.PORT || 5000;
@@ -18,7 +19,7 @@ const port = process.env.PORT || 5000;
 connectDB();
 
 const app = express();
-const cors = require('cors');
+
 
 app.use(cors({
   origin:["https://shooperssite.vercel.app"],

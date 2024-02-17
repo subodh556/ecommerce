@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api/": "https://ecommerce-theta-hazel.vercel.app/",
-      "/uploads/": "https://ecommerce-theta-hazel.vercel.app/",
+      "/api/": "http://localhost:5000",
+      "/uploads/": "http://localhost:5000",
     },
   },
 })

@@ -5,6 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: "/frontend/",
   plugins: [react()], 
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets', 
+  },
   server: {
     https: true,
     port: 5000,
@@ -12,10 +16,7 @@ export default defineConfig({
       "/api/": "https://ecommerce-theta-hazel.vercel.app/",
       "/uploads/": "https://ecommerce-theta-hazel.vercel.app/",
     },
-    build: {
-      outDir: 'dist',
-      assetsDir: 'assets', 
-    }
+    
   },
 })
 

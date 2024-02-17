@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api/": "https://ecommerce-theta-hazel.vercel.app/",
-      "/uploads/": "http://localhost:5000",
+      "/uploads/": "https://ecommerce-theta-hazel.vercel.app/",
     },
   },
 })

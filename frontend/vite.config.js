@@ -3,20 +3,23 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+
   base: "/frontend/",
-  plugins: [react()], 
+  
   build: {
     outDir: 'dist',
-    assetsDir: 'assets', 
+    assetsDir: 'assets',  
   },
+
   server: {
     https: true,
-    port: 5000,
+    port: 5000, 
     proxy: {
       "/api/": "https://ecommerce-theta-hazel.vercel.app/",
-      "/uploads/": "https://ecommerce-theta-hazel.vercel.app/",
-    },
-    
+      "/uploads/": "https://ecommerce-theta-hazel.vercel.app/" 
+    }
   },
+
+  plugins: [react()]
 })
 

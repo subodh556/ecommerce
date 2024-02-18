@@ -94,7 +94,7 @@ const Navigation = () => {
               
               <div className="rounded-full h-6 w-6 bg-white  mr-0 text-black">
                 
-                <span className="text-black font-bold">{userInfo.username.charAt(0)}</span>
+                <span className="text-black font-bold">{userInfo.username.charAt(0).toUpperCase()}</span>
                 
               </div>
               <span className="hidden nav-item-name ml-2 mr-2 ">{userInfo.username}</span>

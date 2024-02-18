@@ -8,6 +8,7 @@ import Loader from "../../components/Loader";
 import { useCreateOrderMutation } from "../../redux/api/orderApiSlice";
 import { clearCartItems } from "../../redux/features/cart/cartSlice";
 
+
 const PlaceOrder = () => {
   const navigate = useNavigate();
 

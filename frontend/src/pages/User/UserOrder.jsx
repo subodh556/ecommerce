@@ -7,15 +7,15 @@ const UserOrder = () => {
   const { data: orders, isLoading, error } = useGetMyOrdersQuery();
 
   return (
-    <div className="container mx-auto">
-      <h2 className="text-2xl font-semibold mb-4">My Orders </h2>
+    <div className="container  mx-auto ">
+      <h2 className="text-2xl font-semibold mb-4 ml-20">My Orders </h2>
 
       {isLoading ? (
         <Loader />
       ) : error ? (
         <Message variant="danger">{error?.data?.error || error.error}</Message>
       ) : (
-        <table className="w-full">
+        <table className="w-full ml-20">
           <thead>
             <tr>
               <td className="py-2">IMAGE</td>

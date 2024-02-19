@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import moment from "moment";
+import { Link } from "react-router-dom";
 import {
   FaBox,
   FaClock,
@@ -33,6 +34,7 @@ const ProductCarousel = () => {
           {error?.data?.message || error.error}
         </Message>
       ) : (
+        
         <Slider
           {...settings}
           className="xl:w-[40rem]  lg:w-[50rem] md:w-[56rem] sm:w-[40rem] sm:block"
@@ -51,7 +53,9 @@ const ProductCarousel = () => {
               quantity,
               countInStock,
             }) => (
+              
               <div key={_id}>
+                <Link to={`/product/${_id}`}>
                 <img
                   src={image}
                   alt={name}
@@ -98,7 +102,9 @@ const ProductCarousel = () => {
                     </div>
                   </div>
                 </div>
+                </Link>
               </div>
+              
             )
           )}
         </Slider>

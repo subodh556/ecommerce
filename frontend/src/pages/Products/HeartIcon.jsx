@@ -44,13 +44,13 @@ const HeartIcon = ({ product }) => {
 
   return (
     <div
-      className="absolute top-2 right-5 cursor-pointer"
+      className="absolute top-2 right-3 cursor-pointer"
       onClick={toggleFavorites}
     >
       {(isFavorite && userInfo) ? (
-        <FaHeart className="text-pink-500" />
+        <FaHeart className="text-pink-500" size={20} />
       ) : (
-        <FaRegHeart className="text-white" />
+        <FaRegHeart className="text-white" size={20}/>
       )}
     </div>
   );

@@ -6,11 +6,13 @@ const Product = ({ product }) => {
     <div className="w-[30rem] ml-[1rem] p-2 relative">
       
       <div className="relative ">
+      <Link to={`/product/${product._id}`}>
         <img
           src={product.image}
           alt={product.name}
           className="w-[30rem] h-[18rem] rounded"
         />
+        </Link>
         <HeartIcon product={product} />
       </div>
       <Link to={`/product/${product._id}`}>

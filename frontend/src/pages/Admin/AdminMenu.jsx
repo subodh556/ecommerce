@@ -35,7 +35,7 @@ const AdminMenu = () => {
           <ul className="list-none mt-8  ">
             <li>
               <NavLink
-                className="list-item py-1 px-3  mb-5 hover:bg-[#2E2D2D] rounded-sm"
+                className="list-item py-1 px-3  mb-0 hover:bg-[#2E2D2D]  rounded-sm"
                 to="/admin/dashboard"
                 style={({ isActive }) => ({
                   color: isActive ? "greenyellow" : "white",

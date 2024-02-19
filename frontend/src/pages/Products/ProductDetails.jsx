@@ -59,8 +59,13 @@ const ProductDetails = () => {
   };
 
   const addToCartHandler = () => {
-    dispatch(addToCart({ ...product, qty }));
-    navigate("/cart");
+    if(userInfo){
+      dispatch(addToCart({ ...product, qty }));
+      navigate("/cart");
+    }else{
+      navigate("/login")
+    }
+    
   };
 
   return (

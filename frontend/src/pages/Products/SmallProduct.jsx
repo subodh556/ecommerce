@@ -7,11 +7,13 @@ const SmallProduct = ({ product }) => {
     <div className="w-[18rem] ml-[2rem] mt-2">
        
       <div className="relative ">
+      <Link to={`/product/${product._id}`}>
         <img
           src={product.image}
           alt={product.name}
           className="h-auto  rounded-lg "
         />
+        </Link>
         <HeartIcon product={product} />
       </div>
       <Link to={`/product/${product._id}`}>

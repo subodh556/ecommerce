@@ -1,16 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 import { toast } from "react-toastify";
 import HeartIcon from "./HeartIcon";
 
+
 const ProductCard = ({ p }) => {
   const dispatch = useDispatch();
+  const {userInfo} = useSelector((state)=>state.auth);
+  const navigate = useNavigate();
 
   const addToCartHandler = (product, qty) => {
-    dispatch(addToCart({ ...product, qty }));
-    toast.success("Item added to cart");
+    if(userInfo){
+      dispatch(addToCart({ ...product, qty }));
+      toast.success("Item added to cart");
+    }
+    else{
+      
+      navigate("/login");
+    }
   };
 
   return (

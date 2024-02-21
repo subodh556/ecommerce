@@ -21,6 +21,7 @@ import Ratings from "./Ratings";
 import ProductTabs from "./ProductTabs";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 
+
 const ProductDetails = () => {
   const { id: productId } = useParams();
   const navigate = useNavigate();
@@ -72,7 +73,7 @@ const ProductDetails = () => {
     <>
       <div className="bg-[#373536] ml-20 w-[6rem] h-[2rem]">
         <Link
-          to="/"
+          onClick={handleclick}
           className="text-white flex justify-center decoration-none  font-semibold hover:font-bold "
         > 
           Go Back
